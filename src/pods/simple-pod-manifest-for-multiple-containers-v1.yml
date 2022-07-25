@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: httpd-pod
+  name: my-app
   labels:
     env: prod
     app: main
@@ -9,7 +9,11 @@ metadata:
     owner: Bagrat_Mukaelyan
 spec:
   containers:
-    - name: httpd-container
-      image: httpd:latest
+    - name: container-web
+      image: mginx:latest
+      ports:
+        - containerPort: 80
+    - name: container-api
+      image: tomcat:latest
       ports:
         - containerPort: 80
