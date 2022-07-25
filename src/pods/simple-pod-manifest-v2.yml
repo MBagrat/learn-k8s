@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd-pod
+  labels:
+    env: prod
+    app: main
+    tier: FE
+    owner: Bagrat_Mukaelyan
+spec:
+  containers:
+    - name: httpd-container
+      image: httpd:latest
+      ports:
+        - containerPort: 80
